@@ -1,0 +1,99 @@
+/* ============================================================
+   Design tokens — "Bridge" job portal
+   Palette: deep forest teal + warm amber, on a soft paper base.
+   Type: Fraunces (headlines) + Inter (UI/body)
+   ============================================================ */
+:root {
+  --paper: #f4f2e9;
+  --surface: #ffffff;
+  --ink: #142420;
+  --ink-soft: #435049;
+  --muted: #6f7a71;
+
+  --primary: #1f5a4e;
+  --primary-dark: #12362e;
+  --primary-tint: #e7efec;
+
+  --accent: #e2a33b;
+  --accent-dark: #b97e1f;
+  --accent-tint: #fbf0dc;
+
+  --danger: #b3402f;
+  --danger-tint: #fbe9e5;
+
+  --border: #ddd8c6;
+  --border-soft: #e9e5d6;
+
+  --shadow-sm: 0 1px 2px rgba(20, 36, 32, 0.06);
+  --shadow-md: 0 8px 24px rgba(20, 36, 32, 0.10);
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --font-head: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-head);
+  color: var(--ink);
+  margin: 0 0 0.5em;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 500; }
+h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); }
+h3 { font-size: 1.25rem; }
+
+p { margin: 0 0 1em; color: var(--ink-soft); }
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+img { max-width: 100%; display: block; }
+
+::selection { background: var(--accent-tint); color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
